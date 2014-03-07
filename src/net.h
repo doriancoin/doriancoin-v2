@@ -55,7 +55,7 @@ enum
 
     LOCAL_MAX
 };
-static const int64 MAX_MONEY1 = 6;
+static const int64 MAX_MONEY1 = 15;
 void SetLimited(enum Network net, bool fLimited = true);
 bool IsLimited(enum Network net);
 bool IsLimited(const CNetAddr& addr);
