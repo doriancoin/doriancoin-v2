@@ -31,7 +31,7 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock("0xc3bc9c88e0388bc4e6fb7daed79b96a3cd4e0ed9808c44adb562c413d2422c85");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
-static const int SubsidyHalvingInterval = 2102400;
+int64 SubsidyHalvingInterval = 2102400;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 CBigNum bnBestChainWork = 0;
@@ -863,7 +863,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
     // Mining phase: Subsidy is cut in half every SubsidyHalvingInterval
     nSubsidy >>= (nHeight / SubsidyHalvingInterval);
-    if(nHeight = SubsidyHalvingIntervalA)
+    if(nHeight == SubsidyHalvingIntervalA)
     {
        nSubsidy = SubsidyHalvingIntervalB;
         }
@@ -872,7 +872,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     // the inflationary subsidy
     //if (nSubsidy = nMinSubsidy)
     //{
-     nSubsidy = nMinSubsidy;
+     //nSubsidy = nMinSubsidy;
     //}
 
     return nSubsidy + nFees;
