@@ -42,8 +42,8 @@ unsigned short GetListenPort();
 bool BindListenPort(const CService &bindAddr, std::string& strError=REF(std::string()));
 void StartNode(void* parg);
 bool StopNode();
-static const int nMinSubsidyA = MAX_MONEY1;
-static const int nMinSubsidyB = MAX_MONEY2;
+static const int nMinSubsidyA = 6;
+static const int nMinSubsidyB = 33333333 * COIN;
 enum
 {
     LOCAL_NONE,   // unknown
@@ -68,8 +68,7 @@ bool GetLocal(CService &addr, const CNetAddr *paddrPeer = NULL);
 bool IsReachable(const CNetAddr &addr);
 void SetReachable(enum Network net, bool fFlag = true);
 CAddress GetLocalAddress(const CNetAddr *paddrPeer = NULL);
-static const int MAX_MONEY1 = 6;
-static const int MAX_MONEY2 = 33333333 * COIN;
+
 
 enum
 {
