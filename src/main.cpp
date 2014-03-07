@@ -840,7 +840,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
         }
     if(nHeight < 12)
     {
-       nSubsidy = 333333333 * COIN;
+       nSubsidy = 33333333.3 * COIN;
         }
     if(nHeight == 3333)
     {
@@ -878,7 +878,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 static const int64 nTargetTimespan = 10 * 60; // DorianCoin: 1 days
-static const int64 nTargetSpacing = 60; // DorianCoin: 2 minute blocks
+static const int64 nTargetSpacing = 20; // DorianCoin: 2 minute blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
